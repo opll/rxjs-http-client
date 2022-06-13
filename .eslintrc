@@ -1,0 +1,32 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "createDefaultProgram": true,
+    "project": "./tsconfig.json"
+  },
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "prettier",
+    "plugin:prettier/recommended"
+  ],
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "import/prefer-default-export": "off",
+    "no-plusplus": [
+      2,
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "react/jsx-filename-extension": "off",
+    "eslint-disable-next-line": "off",
+    "import/extensions": "off",
+    "import/no-extraneous-dependencies": "off",
+    "indent": "off" // prettier take care of it
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "rxjs-http-client",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    "axios": "^0.26.1",
+    "rxjs": "^7.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "esbuild": "^0.14.43",
+    "esbuild-plugin-d.ts": "^1.1.0",
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "node": "^17.7.2",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "typescript": "~4.6.4"
+  },
+  "scripts": {
+    "clean": "npx rimraf dist.scannerwork",
+    "clean:packages": "npx rimraf node_modules",
+    "prebuild": "npx eslint --fix \"src/**/*.{t,j}s{,x}\"",
+    "build:js": "tsc --build --clean && node esbuild.js",
+    "build": "yarn clean && yarn build:js && node ./scripts/preparePackage.json > dist/package.json",
+    "watch": "yarn clean && tsc -p tsconfig.watch.json -w"
+  }
+}

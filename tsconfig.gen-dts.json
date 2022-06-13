@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig-common.json",
+  "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
+  },
+  "include": ["./src/*", "./src/**/*"],
+  "exclude": ["./src/**/*.test.tsx", "./src/**/*.test.ts", "./src/setupTests.ts"]
+}
